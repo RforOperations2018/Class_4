@@ -1,4 +1,4 @@
-# Class 2
+# Class 4
 # In Class Examples - Inputs - Final
 
 library(shiny)
@@ -77,6 +77,9 @@ server <- function(input, output) {
     starwars <- swInput()
     
     subset(starwars, select = c(name, height, mass, birth_year, homeworld, species, films))
+  })
+  observe({
+    print(reactiveValuesToList(input))
   })
 }
 
